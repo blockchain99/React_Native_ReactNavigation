@@ -1,0 +1,39 @@
+1.~/reactNativeRedux/myDev$ react-native init getting_react_native_my
+2. ~/reactNativeRedux/myDev/getting_react_native_my$ npm install --save react-redux redux
+  ~/reactNativeRedux/myDev/getting_react_native_my$ npm install --save-dev eslint-config-rallycoding
+   getting_react_native_my$ npm install --save react-native-elements
+                          $ npm install --save react-navigation
+3. To handle asynchronous actionCreator:
+getting_react_native_my$ npm install --save redux-thunk
+4. install firebase javaScript lib,
+  $ npm install --save firebase
+
+5. error:
+ Error: `title` cannot be defined as a function in navigation options for
+ `UserDetail` screen.
+
+Try replacing the following:
+{
+    title: ({ state }) => state...
+}
+
+with:
+({ navigation }) => ({
+    title: navigation.state...
+})
+6. {{..}} : The outer curly braces inject JavaScript into JSX.
+ They say, "everything between us should be read as JavaScript, not JSX."
+ If you inject an object literal into JSX, and your entire injection is
+ only that object literal, then you will end up with double curly braces.
+
+7.error: title cannot be defined as a function in navigation options!
+navigationOptions:
+   title: ({ state }) => `${state.params.name.first.toUpperCase()} ${state.params.name.last.toUpperCase()}`
+ I've recently updated react-navigation, and I can no longer use a function
+ to define a title like so:
+
+8. in Feed.js(screen), I can write asf.
+ static navigationOptions ={...}
+ but in Router, insert nivigationOption is much better.
+
+9. 
